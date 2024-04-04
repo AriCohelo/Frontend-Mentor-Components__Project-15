@@ -13,32 +13,27 @@
 		/>
 	</head>
 	<body>
-		<picture>
-			<source
-				class="overview__back-topM"
-				srcset="../src/images/bg-pattern-top-mobile.svg"
-				media="(max-width:650px)"
-			/>
-
-			<img
-				class="overview__back-top"
-				src="../src/images/bg-pattern-top-desktop.svg"
-				alt="back-top"
-			/>
-		</picture>
-		<picture>
-			<source
-				class="overview__back-bottomM"
-				srcset="../src/images/bg-pattern-bottom-mobile.svg"
-				media="(max-width:650px)"
-			/>
-			<img
-				class="overview__back-bottom"
-				src="../src/images/bg-pattern-bottom-desktop.svg"
-				alt="back-bottom"
-			/>
-		</picture>
 		<article class="overview">
+			<picture class="overview__back-top-desktop">
+				<source
+					srcset="../src/images/bg-pattern-top-desktop.svg"
+					media="(min-width: 1000px)"
+				/>
+				<img
+					src="../src/images/bg-pattern-top-mobile.svg"
+					alt="background-top-mobile"
+				/>
+			</picture>
+			<picture class="overview__back-bottom-desktop">
+				<source
+					srcset="../src/images/bg-pattern-bottom-desktop.svg"
+					media="(min-width: 1000px)"
+				/>
+				<img
+					src="../src/images/bg-pattern-bottom-mobile.svg"
+					alt="background-bottom-mobile"
+				/>
+			</picture>
 			<section class="overview-upper">
 				<section class="overview__title-description">
 					<h1 class="overview__title">

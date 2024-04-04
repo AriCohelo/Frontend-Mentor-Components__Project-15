@@ -5,22 +5,11 @@
 body {
 	font-size: 15px;
 	font-family: $Ff-primary;
-	height: 800px;
-	width: 100%;
 }
 .overview {
 	width: 100%;
 	padding: 7rem 10rem 7rem 10rem;
 	@include flexer(column, center, center);
-	&__back-top {
-		position: absolute;
-	}
-	&__back-bottom {
-		position: absolute;
-		z-index: -1;
-		right: 0;
-		bottom: 0;
-	}
 	&-upper {
 		@include flexer(row, space-between, center);
 		width: 100%;
@@ -30,7 +19,6 @@ body {
 		gap: 2rem;
 		margin-top: 3rem;
 	}
-
 	&__title {
 		font-size: 3.4375rem;
 		color: $Clr-very-dark-magenta;
@@ -120,6 +108,17 @@ body {
 	&__user3 {
 		margin-top: 2rem;
 	}
+	&__back-top-desktop {
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+	&__back-bottom-desktop {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		z-index: -1;
+	}
 }
 
 .userCard-flex {
@@ -129,9 +128,6 @@ body {
 	margin-bottom: 1.5rem;
 }
 @media (max-width: 1000px) {
-	body {
-		height: 1530px;
-	}
 	.overview-upper,
 	.overview-lower {
 		@include flexer(column, center, center);
@@ -161,6 +157,9 @@ body {
 		&__user2,
 		&__user3 {
 			margin-top: 0;
+		}
+		&__back-bottom-desktop {
+			bottom: -730px;
 		}
 	}
 }
