@@ -5,30 +5,30 @@
 body {
 	font-size: 15px;
 	font-family: $Ff-primary;
-	min-height: 100vh;
-	// display: grid;
-	// place-content: center;
+	height: 800px;
+	width: 100%;
 }
 .overview {
-	// @include flexer(column, center, center);
 	width: 100%;
-	padding: 10rem 7rem 10rem 7rem;
-	&__back-bottom {
-		position: absolute;
-		top: 150px;
-	}
+	padding: 7rem 10rem 7rem 10rem;
+	@include flexer(column, center, center);
 	&__back-top {
 		position: absolute;
-		top: 0;
-		left: 0;
+	}
+	&__back-bottom {
+		position: absolute;
+		z-index: -1;
+		right: 0;
+		bottom: 0;
 	}
 	&-upper {
-		@include flexer();
+		@include flexer(row, space-between, center);
+		width: 100%;
 	}
 	&-lower {
-		@include flexer(row, flex-start, center);
-		width: 100%;
+		@include flexer(row, space-between, center);
 		gap: 2rem;
+		margin-top: 3rem;
 	}
 
 	&__title {
@@ -46,8 +46,6 @@ body {
 		color: $Clr-dark-grayish-magenta;
 	}
 	&__rating {
-		width: 100%;
-		margin-left: 6rem;
 		&Box1,
 		&Box2,
 		&Box3 {
@@ -65,6 +63,8 @@ body {
 			}
 			&-text {
 				margin-left: 2rem;
+				color: $Clr-very-dark-magenta;
+				font-size: 1.0625rem;
 			}
 		}
 		&-stars {
@@ -83,13 +83,12 @@ body {
 		margin-left: 6rem;
 	}
 	&__user {
-		width: 21.875rem;
+		min-width: 21.875rem;
 		background-color: $Clr-very-dark-magenta;
 		border-radius: 10px;
 		padding: 2rem;
-		flex-grow: 1;
-		height: 14.5rem;
-		min-width: 15rem;
+		height: auto;
+		max-width: 22rem;
 
 		&-photo {
 			border-radius: 50%;
@@ -99,6 +98,7 @@ body {
 		&-statement {
 			color: $Clr-white;
 			line-height: 1.375rem;
+			width: 18.3125rem;
 		}
 		&-name {
 			color: $Clr-white;
@@ -115,10 +115,10 @@ body {
 		}
 	}
 	&__user2 {
-		margin-top: 3rem;
+		margin-top: 1rem;
 	}
 	&__user3 {
-		margin-top: 6rem;
+		margin-top: 2rem;
 	}
 }
 
@@ -128,22 +128,16 @@ body {
 	align-items: center;
 	margin-bottom: 1.5rem;
 }
-@media (max-width: 650px) {
+@media (max-width: 1000px) {
+	body {
+		height: 1530px;
+	}
 	.overview-upper,
 	.overview-lower {
 		@include flexer(column, center, center);
 	}
-	.overview__back-topM {
-		position: absolute;
-	}
-	.overview__back-bottomM {
-		position: absolute;
-	}
 	.overview {
-		&__back-top,
-		&__back-bottom {
-			display: none;
-		}
+		padding: 5rem 1.5rem 5rem 1.5rem;
 		&__title {
 			font-size: 2.5625rem;
 			text-align: center;
@@ -153,24 +147,20 @@ body {
 			text-align: center;
 			width: 21rem;
 		}
-	}
-	.overview__ratingBox1,
-	.overview__ratingBox2,
-	.overview__ratingBox3 {
-		@include flexer(column, center, center);
-		min-width: 20.5rem;
-	}
-	.overview__ratingBox1,
-	.overview__ratingBox2,
-	.overview__ratingBox3 {
-		margin-left: 0;
-		margin-right: 0;
-	}
-	.overview__user2,
-	.overview__user3 {
-		margin-top: 0;
-	}
-	.overview__rating {
-		margin-left: 0;
+		&__rating {
+			margin-left: 0;
+			&Box1,
+			&Box2,
+			&Box3 {
+				@include flexer(column, center, center);
+				min-width: 20.5rem;
+				margin-left: 0;
+				margin-right: 0;
+			}
+		}
+		&__user2,
+		&__user3 {
+			margin-top: 0;
+		}
 	}
 }
